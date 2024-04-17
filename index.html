@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <TITLE>HANGMAN</TITLE>
+  <link rel="stylesheet" href="styles/header.css">
+  <link rel="stylesheet" href="styles/sidebar.css">
+  <link rel="stylesheet" href="styles/general.css">
+</head>
+<body onload="begin()">
+    <div class="header">
+      <div class="block">
+        <button class="reset-button" onclick="reset();" style="display:block;">
+          Reset</button>
+      </div>
+      <div class="block">
+        <label for="long-words">Word Topic:</label>
+        <select name="word-topic" id="word-topic" onchange="begin()"">
+          <option value="countries">Countries</option> 
+          <option value="dog-breeds">Dog Breeds</option> 
+          <option value="horse-breeds">Horse Breeds</option> 
+          <option selected value="long-words">Long Words</option> 
+          <option value="short-words">Short Words</option>
+        </select>
+      </div>
+      <div class="block">
+        
+      </div>
+    </div>
+
+    <div class="sidebar">
+      <div class="letter"><button>A</button></div>
+      <div class="letter"><button>B</button></div>
+      <div class="letter"><button>C</button></div>
+      <div class="letter"><button>D</button></div>
+      <div class="letter"><button>E</button></div>
+      <div class="letter"><button>F</button></div>
+      <div class="letter"><button>G</button></div>
+      <div class="letter"><button>H</button></div>
+      <div class="letter"><button>I</button></div>
+      <div class="letter"><button>J</button></div>
+      <div class="letter"><button>K</button></div>
+      <div class="letter"><button>L</button></div>
+      <div class="letter"><button>M</button></div>
+    </div>
+    <div class="sidebar1">
+      <div class="letter"><button>N</button></div>
+      <div class="letter"><button>O</button></div>
+      <div class="letter"><button>P</button></div>
+      <div class="letter"><button>Q</button></div>
+      <div class="letter"><button>R</button></div>
+      <div class="letter"><button>S</button></div>
+      <div class="letter"><button>T</button></div>
+      <div class="letter"><button>U</button></div>
+      <div class="letter"><button>V</button></div>
+      <div class="letter"><button>W</button></div>
+      <div class="letter"><button>X</button></div>
+      <div class="letter"><button>Y</button></div>
+      <div class="letter"><button>Z</button></div>
+    </div>
+  <canvas class="myCanvas"></canvas>
+  <script src="java/canvas.js"></script>
+  <script src="java/script.js"></script>
+</body>
+</html>

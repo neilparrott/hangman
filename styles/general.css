@@ -1,0 +1,17 @@
+body {
+  margin: none;
+  background-color: rgb(161, 162, 159);
+  border: none;
+  /*margin-bottom: 2000px;
+  margin-right: 1000px;*/
+  overflow: hidden;
+}
+
+.myCanvas {
+  position: relative;
+  width: 600px;
+  height: 450px;
+  background-color: rgb(17, 17, 93);
+  top: 80px;
+  left: 100px;
+}

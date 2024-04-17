@@ -1,0 +1,29 @@
+.header {
+  position: fixed;
+  display: flex;
+  background-color: lightblue;
+  z-index: 200;
+  align-items: center;
+}
+.block {
+  position: relative;
+  font-size: 18px;
+  left: 20px;
+  width: 214px;
+  margin: 10px;
+}
+.reset-button {
+  background-color: rgb(232, 69, 69);
+  color: white;
+  font-weight: bold;
+  margin: 10px;
+  border: none;
+  font-family: Arial;
+  font-size: 15px;
+  cursor: pointer;
+}
+#word-topic {
+  width: 100px;
+  /*background: yellow;*/
+  height: 30px;
+}
