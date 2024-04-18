@@ -70,8 +70,10 @@ function draw(part) {
       ctx.lineTo(350,300);
       ctx.lineTo(370,275);
       ctx.stroke();
-      msg(`Sorry, you lost`,50,225);
-      msg(`${chosenWord}`,50,275);
+      setTimeout(() => {
+        msg(`Sorry, you lost`,50,225);
+        msg(`${chosenWord}`,50,275); 
+      }, 1000);
       break;
     default:
         // code block
