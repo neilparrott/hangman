@@ -2,7 +2,9 @@
 const longwords = [
   "protagonist","antagonist","prosthetic", "promontory",
   "elementary","dystopian","utilitarian","libertarian",
-  "consequential","transportation"
+  "consequential","transportation","revolution","evolution",
+  "extrapolation","deviation","consternation","environment",
+  "communication"
 ];
 const countries = [
   "england","australia","india","russia",
@@ -27,7 +29,7 @@ const countries = [
   "italy","spain","portugal","romania","bulgaria","poland","france",
   "hungary","albania","norway","sweden","denmark","finland","austria","germany",
   "latvia","estonia","georgia","ukraine","turkey","greece","belgium","czech republic",
-  "ireland","croatia","malta","luxembourg","netherlands","slovenia",
+  "ireland","croatia","monaco","malta","luxembourg","netherlands","slovenia",
 
   "iran","iraq","israel",
   "pakistan","bangladesh","turkmenistan","azerbaijam",
@@ -68,6 +70,8 @@ const horsebreeds = [
 "Welsh Cob","Welsh Mountain pony","Welsh pony","Yamoote","Yorkshire Coach horse",
 "Zeeland horse","Zemaitukas"
 ];
+let xypos = [];   // point for each letter in word
+
 let correct = 0; // count correct letters so we can test for WIN
 let part = 1;    // initialise part to draw first
 let chosenWord = "";
@@ -130,6 +134,10 @@ function reset() {
   });
   drawUnderlines(chosenWord.length);
 };
+// were underlines but thought white CIRCLES would show the LETTERS clearer? 
+// also thought it nice to create an array for all x,y 
+// points so that this can be used for x,y pairs for the 
+// drawing of the letters
 
 function drawUnderlines(len) {
   
@@ -137,17 +145,19 @@ function drawUnderlines(len) {
 
   ctx.strokeStyle = "white";
   ctx.fillStyle = "white";
-  ctx.textAllign= "right";
+  //ctx.textAllign= "right";
   ctx.lineWidth=2;
   ctx.font = "30px Arial";
   
   for (let i = 1; i <= len; i++) {
     if (chosenWord.charAt(i-1) != " ") {
       ctx.beginPath();
-      ctx.moveTo(i * 18,50);
-      //ctx.fillText(chosenWord.charAt(i-1),i*20,50);
-      ctx.lineTo(i * 18 + 13,50);
-      ctx.stroke();
+      xypos.push({x: i*22, y: 44});
+      //ctx.moveTo(i * 18,50);    for underline
+      ctx.arc(xypos[i-1].x, xypos[i-1].y, 11, 0,Math.PI * 2)
+      //ctx.lineTo(i * 18 + 13,50); for underline
+      //ctx.stroke();               for underline
+      ctx.fill();
     };
   }; 
 };
@@ -168,22 +178,29 @@ function drawLetter(letter) {
     };
   }
   //console.log(`drawletter: ${letter}  post correct: ${correct}`);
-  ctx.strokeStyle = "white";
-  ctx.fillStyle = "white";
+  ctx.strokeStyle = "black"; // was white  for underline
+  ctx.fillStyle = "black";   // was white
+  ctx.font = "17px Arial";
   //console.log(positions);
   for (let i = 0; i < chosenWord.length; i++) {
     ctx.beginPath();
     if ( positions[i] === 1) {
-      ctx.fillText(letter,(i+1)*18,50);
+      //ctx.fillText(letter,(i+1)*18,50);  for underline
+      ctx.textAllign="center";
+      ctx.textBaseline="bottom";
+      //console.log("x: " +  xypos[i].x );
+      ctx.fillText(letter,xypos[i].x - 5,xypos[i].y +9);
       ctx.stroke();
     } 
   } 
   if (correct + countBlanks() === chosenWord.length) {
-    msg("Congratulations!!",40,225);
+    setTimeout( () => {
+      msg("Congratulations!!",40,225);
+    },1000);
   }
 }
 function msg(message,len,y) {
-  ctx.clearRect(0,0,canvasElement.height,canvasElement.width);
+    ctx.clearRect(0,0,canvasElement.height,canvasElement.width); 
   setTimeout( () => {
     ctx.strokeStyle = "yellow";
     ctx.fillStyle = "red";
