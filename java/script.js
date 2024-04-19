@@ -151,7 +151,7 @@ function drawUnderlines(len) {
   ctx.font = "30px Arial";
   xypos.push({x: 0,y: 0});    // add u dummy point in index 0 , 
   
-  for (let i = 1; i <= len; i++) {
+  for (let i = 1; i === len; i++) {
     if (chosenWord.charAt(i-1) != " ") {
       ctx.beginPath();
       xypos.push({x: i*22, y: 44});
