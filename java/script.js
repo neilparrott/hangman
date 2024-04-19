@@ -1,3 +1,4 @@
+let level = "easy";
 const longwords = [
   "protagonist","antagonist","prosthetic", "promontory",
   "elementary","dystopian","utilitarian","libertarian",
@@ -88,6 +89,7 @@ let areEventListenersAssigned = 0;
 function begin() {
   getOption();     // get the word topic
   //console.log(newArray);
+  level =  getLevel();
   chosenWord = newArray[pickWord(newArray.length)];
   reset();
   drawUnderlines(chosenWord.length);
@@ -113,19 +115,25 @@ function process(letter,chosenWord, node) {
   let letterl = letter.toUpperCase();
   //console.log("chosenword: " + chosenWord + " letter: " + letterl );
   if (chosenWord.includes(`${letterl}`)) {
-    drawLetter(letter);
-  } else {
-    draw(part);
-    part++;
-  }
-
-};
+      drawLetter(letter);
+    } else {
+        if (level == "easy") {
+          drawEasy(part);
+        } else if (level == "tricky") {
+          drawTricky(part);
+        } else {
+          drawDire(part);
+        }
+      part++;
+    }
+  };
 
 function reset() {
     /* get new chosen word */
   correct = 0;      // reset correct letter count  
   part = 1;         // reset part to draw  
   xypos = [];
+  level = getLevel();
   chosenWord = newArray[pickWord(newArray.length)];
 
     /* undisable all nodes for the letters */
@@ -216,6 +224,11 @@ function msg(message,len,y) {
     reset();
   },4000); 
 }
+function getLevel() {
+  var selectLevel = document.getElementById('level-selected');
+  var level = selectLevel.options[selectLevel.selectedIndex].value;
+  return level;
+}
 function getOption() {
   var selectBox = 
     document.getElementById('word-topic');
@@ -247,4 +260,4 @@ function countBlanks() {
     }
   }
   return noBlanks;
-}; 
+};
