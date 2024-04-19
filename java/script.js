@@ -149,13 +149,14 @@ function drawUnderlines(len) {
   //ctx.textAllign= "right";
   ctx.lineWidth=2;
   ctx.font = "30px Arial";
+  xypos.push({x: 0,y: 0});    // add u dummy point in index 0 , 
   
   for (let i = 1; i <= len; i++) {
     if (chosenWord.charAt(i-1) != " ") {
       ctx.beginPath();
       xypos.push({x: i*22, y: 44});
       //ctx.moveTo(i * 18,50);    for underline
-      ctx.arc(xypos[i-1].x, xypos[i-1].y, 11, 0,Math.PI * 2);
+      ctx.arc(xypos[i].x, xypos[i].y, 11, 0,Math.PI * 2);
       //ctx.lineTo(i * 18 + 13,50); for underline
       //ctx.stroke();               for underline
       ctx.fill();
