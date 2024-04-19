@@ -191,7 +191,7 @@ function drawLetter(letter) {
       ctx.textAllign="center";
       ctx.textBaseline="bottom";
       //console.log("x: " +  xypos[i].x );
-      ctx.fillText(letter,xypos[i].x - 5,xypos[i].y +9);
+      ctx.fillText(letter,xypos[i+1].x - 5,xypos[i+1].y +9);
       ctx.stroke();
     } 
   } 
