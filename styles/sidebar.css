@@ -24,10 +24,13 @@
 .letter > * {
   position: relative;   
   top: 80px;
+  width: 30px;
+  height:30px;
   align-items: center; 
-  margin: 3ßpx;
+  margin: 2px;
+  border-radius: 5px;
   cursor: pointer;
-  padding-top: 7px;
-  padding-bottom: 7px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
