@@ -126,6 +126,7 @@ function reset() {
     /* get new chosen word */
   correct = 0;      // reset correct letter count  
   part = 1;         // reset part to draw  
+  xypos = [];
   chosenWord = newArray[pickWord(newArray.length)];
 
     /* undisable all nodes for the letters */
