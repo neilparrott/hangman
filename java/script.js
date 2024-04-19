@@ -1,4 +1,3 @@
-
 const longwords = [
   "protagonist","antagonist","prosthetic", "promontory",
   "elementary","dystopian","utilitarian","libertarian",
@@ -112,7 +111,7 @@ function process(letter,chosenWord, node) {
   /* hide button with letter selected */
   node.disabled = true;
   let letterl = letter.toUpperCase();
-  console.log("chosenword: " + chosenWord + " letter: " + letterl );
+  //console.log("chosenword: " + chosenWord + " letter: " + letterl );
   if (chosenWord.includes(`${letterl}`)) {
     drawLetter(letter);
   } else {
@@ -141,7 +140,11 @@ function reset() {
 // drawing of the letters
 
 function drawUnderlines(len) {
-  
+  //console.log("len=" + len + "chosenWord:" + chosenWord );
+  for (let i = 1; i <= len; i++) {
+    xypos.push({x: i*22, y: 44});
+    //console.log(xypos[i-1].x);
+  } 
   ctx.clearRect(0,0,canvasElement.height,canvasElement.width); 
 
   ctx.strokeStyle = "white";
@@ -149,14 +152,12 @@ function drawUnderlines(len) {
   //ctx.textAllign= "right";
   ctx.lineWidth=2;
   ctx.font = "30px Arial";
-  xypos.push({x: 0,y: 0});    // add u dummy point in index 0 , 
-  
-  for (let i = 1; i === len; i++) {
+
+  for (let i = 1; i <= len; i++) {
     if (chosenWord.charAt(i-1) != " ") {
       ctx.beginPath();
-      xypos.push({x: i*22, y: 44});
       //ctx.moveTo(i * 18,50);    for underline
-      ctx.arc(xypos[i].x, xypos[i].y, 11, 0,Math.PI * 2);
+      ctx.arc(xypos[i-1].x, xypos[i-1].y, 11, 0,Math.PI * 2);
       //ctx.lineTo(i * 18 + 13,50); for underline
       //ctx.stroke();               for underline
       ctx.fill();
@@ -191,7 +192,7 @@ function drawLetter(letter) {
       ctx.textAllign="center";
       ctx.textBaseline="bottom";
       //console.log("x: " +  xypos[i].x );
-      ctx.fillText(letter,xypos[i+1].x - 5,xypos[i+1].y +9);
+      ctx.fillText(letter,xypos[i].x - 5,xypos[i].y +9);
       ctx.stroke();
     } 
   } 
