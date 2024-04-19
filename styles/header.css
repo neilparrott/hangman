@@ -13,17 +13,29 @@
   margin: 10px;
 }
 .reset-button {
-  background-color: rgb(232, 69, 69);
-  color: white;
+  background-color: rgb(238, 127, 127);
+  color: black;
   font-weight: bold;
+  height: 30px;
+  width:90px;
+  border-radius: 5px;
   margin: 10px;
   border: none;
   font-family: Arial;
-  font-size: 15px;
+  font-size: 17px;
   cursor: pointer;
 }
 #word-topic {
   width: 100px;
-  /*background: yellow;*/
+  background: rgb(212, 212, 76);
   height: 30px;
+  font-family: Arial;
+  font-size: 15px;
+}
+#level-selected {
+  width: 100px;
+  background: rgb(243, 144, 219);
+  height: 30px;
+  font-family: Arial;
+  font-size: 15px;
 }
