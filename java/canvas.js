@@ -24,7 +24,7 @@ function drawEasy(part) {
       break;  
     case 4:
       // rope
-      ctx.moveTo(325,80)
+      ctx.moveTo(325,80);
       ctx.lineTo(325,120);
       ctx.stroke();  
       break;
