@@ -155,7 +155,7 @@ function drawUnderlines(len) {
       ctx.beginPath();
       xypos.push({x: i*22, y: 44});
       //ctx.moveTo(i * 18,50);    for underline
-      ctx.arc(xypos[i-1].x, xypos[i-1].y, 11, 0,Math.PI * 2)
+      ctx.arc(xypos[i-1].x, xypos[i-1].y, 11, 0,Math.PI * 2);
       //ctx.lineTo(i * 18 + 13,50); for underline
       //ctx.stroke();               for underline
       ctx.fill();
