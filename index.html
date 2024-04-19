@@ -15,15 +15,22 @@
       <div class="block">
         <label for="long-words">Word Topic:</label>
         <select name="word-topic" id="word-topic" onchange="begin()"">
-          <option value="countries">Countries</option> 
+          <option selected value="countries">Countries</option> 
           <option value="dog-breeds">Dog Breeds</option> 
           <option value="horse-breeds">Horse Breeds</option> 
-          <option selected value="long-words">Long Words</option> 
+          <option value="long-words">Long Words</option> 
           <option value="short-words">Short Words</option>
         </select>
       </div>
-      <div class="block">
-        
+      <div title="Easy - 12 tries &#10;Tricky - 10 tries &#10;Dire - 8 tries " class="block">
+        <label for="level-selected">Level:</label>
+        <select name="level-selected" id="level-selected" 
+        onchange="begin()"">
+          <option selected value="easy">Easy</option> 
+          <option value="tricky">Tricky</option> 
+          <option value="dire">Dire</option> 
+          
+        </select>
       </div>
     </div>
 
