@@ -32,7 +32,7 @@ const countries = [
   "ireland","croatia","monaco","malta","luxembourg","netherlands","slovenia",
 
   "iran","iraq","israel",
-  "pakistan","bangladesh","turkmenistan","azerbaijam",
+  "pakistan","bangladesh","turkmenistan","azerbaijan",
   "japan","north korea","south korea","phillipines","thailand",
   "malaysia","singapore"
 ];
