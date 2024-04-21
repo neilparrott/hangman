@@ -85,11 +85,13 @@ canvasElement.height=450;
 canvasElement.width=450;
 const ctx = canvasElement.getContext("2d");
 let areEventListenersAssigned = 0;
+function setLevel() {
+  level =  getLevel();
+}  
 
 function begin() {
   getOption();     // get the word topic
   //console.log(newArray);
-  level =  getLevel();
   chosenWord = newArray[pickWord(newArray.length)];
   reset();
   drawUnderlines(chosenWord.length);
