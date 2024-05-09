@@ -81,8 +81,8 @@ let selected = "";
 //getOption();     // get the word topic
 
 const canvasElement = document.querySelector(".myCanvas");
-canvasElement.height=450;
-canvasElement.width=450;
+canvasElement.height=window.innerHeight;
+canvasElement.width=window.innerWidth;
 const ctx = canvasElement.getContext("2d");
 let areEventListenersAssigned = 0;
 function setLevel() {
